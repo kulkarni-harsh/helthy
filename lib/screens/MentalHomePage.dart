@@ -13,8 +13,6 @@ import 'package:helthy/widgets/TimerWidget.dart';
 import 'package:hive/hive.dart';
 import 'package:hive_flutter/adapters.dart';
 import 'package:hive_flutter/hive_flutter.dart';
-import 'package:hive/hive.dart';
-import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/intl.dart';
 
 class MentalHomePage extends StatefulWidget {
@@ -29,6 +27,7 @@ class _MentalHomePageState extends State<MentalHomePage> {
 
   @override
   void initState() {
+    // ignore: todo
     // TODO: implement initState
     super.initState();
     getUserData();
