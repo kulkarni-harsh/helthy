@@ -13,6 +13,13 @@ void main() async {
   print("main");
   final boxExists = await Hive.boxExists('mental');
   await Hive.openBox('mental');
+  final items = List<DateTime>.generate(
+      7,
+      (i) => DateTime.utc(
+            DateTime.now().year,
+            DateTime.now().month,
+            DateTime.now().day,
+          ).add(Duration(days: -i)));
 
   runApp(MyApp(boxExists: boxExists));
 }
@@ -27,19 +34,26 @@ class MyApp extends StatelessWidget {
       theme: ThemeData(
         primarySwatch: Palette.kToDark,
       ),
-      home: boxExists
-          ? MentalMainPage()
-          : Scaffold(
-              body: ElevatedButton(
-                child: Text("SENAPI"),
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => MentalMainPage()));
-                },
-              ),
-            ),
+      home: boxExists ? MentalMainPage() : NewWidget(),
+    );
+  }
+}
+
+class NewWidget extends StatelessWidget {
+  const NewWidget({
+    Key? key,
+  }) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: ElevatedButton(
+        child: Text("SENAPI"),
+        onPressed: () {
+          Navigator.push(context,
+              MaterialPageRoute(builder: (context) => MentalMainPage()));
+        },
+      ),
     );
   }
 }
