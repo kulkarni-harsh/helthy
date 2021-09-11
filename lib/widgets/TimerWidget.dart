@@ -11,7 +11,6 @@ import 'package:hive_flutter/hive_flutter.dart';
 import 'package:intl/intl.dart';
 
 class TimerWidget extends StatefulWidget {
-  static Color kPrimaryColor = Color(0xFF7266D8);
   const TimerWidget(
       {Key? key,
       required this.title,
@@ -164,7 +163,7 @@ class _TimerWidgetState extends State<TimerWidget> {
         title: Text(
           widget.title,
           style: TextStyle(
-            color: TimerWidget.kPrimaryColor,
+            color: kPrimaryColor,
           ),
         ),
         centerTitle: true,
@@ -198,13 +197,12 @@ class _TimerWidgetState extends State<TimerWidget> {
                               width: MediaQuery.of(context).size.width / 1.2,
                               height: MediaQuery.of(context).size.height / 1.2,
                               duration: duration.inSeconds,
-                              fillColor: TimerWidget.kPrimaryColor,
-                              ringColor:
-                                  TimerWidget.kPrimaryColor.withOpacity(0.5),
+                              fillColor: kPrimaryColor,
+                              ringColor: kPrimaryColor.withOpacity(0.5),
                               isReverse: true,
                               isReverseAnimation: true,
                               textStyle: TextStyle(
-                                color: TimerWidget.kPrimaryColor,
+                                color: kPrimaryColor,
                                 fontSize: 40,
                                 fontWeight: FontWeight.w700,
                               ),
@@ -273,7 +271,7 @@ class _TimerWidgetState extends State<TimerWidget> {
                             isTimeSet //stop_circle_outlined
                                 ? Icons.stop_circle_outlined
                                 : Icons.play_circle_outline_rounded,
-                            color: TimerWidget.kPrimaryColor,
+                            color: kPrimaryColor,
                           ),
                         ),
                       ),

@@ -1,7 +1,9 @@
 import 'dart:math';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:helthy/constants/colors.dart';
+import 'package:helthy/constants/styles.dart';
 import 'package:helthy/models/MentalModel.dart';
 import 'package:hive/hive.dart';
 import 'package:intl/intl.dart';
@@ -117,20 +119,58 @@ class _AnalPageState extends State<AnalPage> {
             ),
           ),
           SliverToBoxAdapter(
-            child: Text(
-                "You can analyze the data as u wish.\nClick on the bar name in legend to toggle it's invisibility.\n Note that Time is given in seconds to provide better clarity"),
+            child: Container(
+              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
+              child: Text(
+                kChartInfo,
+                style: TextStyle(
+                    color: Colors.black87,
+                    fontSize: 20,
+                    fontWeight: FontWeight.w600),
+              ),
+            ),
           ),
           SliverToBoxAdapter(
             child: GestureDetector(
               onTap: () {
-                randomize();
-                setState(() {});
+                showDialog(
+                  context: context,
+                  builder: (context) => CupertinoAlertDialog(
+                      title: Text("Do you want to randomize ?"),
+                      content: Text(
+                          "You can randomize the data of previous days to view the Graph\n (Only for Testers lol)"),
+                      actions: [
+                        TextButton(
+                          onPressed: () {
+                            randomize();
+                            Navigator.of(context).pop();
+                          },
+                          child: Text("Yes"),
+                        ),
+                        TextButton(
+                          onPressed: () {
+                            Navigator.of(context).pop();
+                          },
+                          child: Text("No"),
+                        ),
+                      ]),
+                );
               },
               child: Container(
-                height: 100,
+                margin: EdgeInsets.all(20),
+                padding: EdgeInsets.all(20),
                 width: MediaQuery.of(context).size.width / 3,
-                color: kPrimaryColor,
-                child: Text("Randomize Data"),
+                decoration: BoxDecoration(
+                    color: kPrimaryColor,
+                    borderRadius: BorderRadius.circular(20)),
+                child: Text(
+                  "Randomize Data",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 20,
+                  ),
+                ),
               ),
             ),
           ),
@@ -147,7 +187,7 @@ class _AnalPageState extends State<AnalPage> {
               DateTime.now().month,
               DateTime.now().day,
             ).add(Duration(days: -i)));
-    for (int i = 0; i < items.length - 1; i++) {
+    for (int i = 1; i < items.length; i++) {
       String a = DateFormat('yyyy-MM-dd').format(items[i]).toString();
       MentalModel ox = MentalModel()
         ..bodyScan = Random().nextInt(300)
@@ -158,6 +198,7 @@ class _AnalPageState extends State<AnalPage> {
         ..muscleRelaxation = Random().nextInt(300);
       await Hive.box('mental').put(a, ox);
     }
+    setState(() {});
   }
 }
 

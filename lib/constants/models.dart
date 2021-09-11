@@ -58,3 +58,21 @@ Map<String, String> codeName = {
   "Muscle Relaxation": "MR",
   "Freeform Meditation": "FM",
 };
+
+List<String> quotes = [
+  "You don’t have to control your thoughts. You just have to stop letting them control you",
+  "Take your time healing, as long as you want. Nobody else knows what you’ve been through. How could they know how long it will take to heal you?",
+  "One small crack does not mean that you are broken, it means that you were put to the test and you didn’t fall apart.” — Linda Poindexter",
+  "Sometimes you climb out of bed in the morning and you think, I’m not going to make it, but you laugh inside — remembering all the times you’ve felt that way.” — Charles Bukowski",
+  "There is hope, even when your brain tells you there isn’t.” — John Green",
+  "Out of suffering have emerged the strongest souls; the most massive characters are seared with scars.” — Kahlil Gibran",
+  "Recovery is not one and done. It is a lifelong journey that takes place one day, one step at a time.” — Unknown",
+  "Self-care is how you take your power back.” — Lalah Delia",
+  "Let your story go. Allow yourself to be present with who you are right now.” – Russ Kyle",
+  "My dark days made me strong. Or maybe I already was strong, and they made me prove it.” — Emery Lord",
+  "You can’t control everything. Sometimes you just need to relax and have faith that things will work out. Let go a little and just let life happen.” — Kody Keplinger",
+  "Your illness is not your identity. Your chemistry is not your character.” — Rick Warren",
+  "Happiness can be found even in the darkest of times, if one only remembers to turn on the light.” — Albus Dumbledore",
+  "Emotional pain is not something that should be hidden away and never spoken about. There is truth in your pain, there is growth in your pain, but only if it’s first brought out into the open.” — Steven Aitchison",
+  "You, yourself, as much as anybody in the entire universe, deserve your love and affection.” — Buddha",
+];

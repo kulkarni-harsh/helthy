@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:curved_navigation_bar/curved_navigation_bar.dart';
+import 'package:helthy/constants/colors.dart';
 import 'package:helthy/screens/ScreenList.dart';
 
 class MentalMainPage extends StatefulWidget {
@@ -28,7 +29,7 @@ class _MentalMainPageState extends State<MentalMainPage> {
           letIndexChange: (index) => true,
           color: Colors.white,
           buttonBackgroundColor: Colors.white,
-          backgroundColor: Colors.blueAccent,
+          backgroundColor: kPrimaryColor.withOpacity(0.6),
           animationCurve: Curves.easeInOut,
           height: 50,
           animationDuration: Duration(milliseconds: 600),
