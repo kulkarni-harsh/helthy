@@ -81,7 +81,7 @@ class _RegistrationPageState extends State<RegistrationPage> {
               child: GestureDetector(
                 onTap: () {
                   done();
-                  Navigator.push(
+                  Navigator.pushReplacement(
                       context,
                       MaterialPageRoute(
                           builder: (context) => MentalMainPage()));

@@ -8,7 +8,6 @@ import 'package:helthy/models/MentalModel.dart';
 import 'package:hive/hive.dart';
 import 'package:intl/intl.dart';
 import 'package:syncfusion_flutter_charts/charts.dart';
-import 'package:syncfusion_flutter_charts/sparkcharts.dart';
 
 class AnalPage extends StatefulWidget {
   const AnalPage({Key? key}) : super(key: key);
@@ -22,6 +21,7 @@ class _AnalPageState extends State<AnalPage> {
   late ZoomPanBehavior zoomPanBehavior;
   @override
   void initState() {
+    // ignore: todo
     // TODO: implement initState
     super.initState();
     chartData = getChartData();
@@ -40,7 +40,7 @@ class _AnalPageState extends State<AnalPage> {
               DateTime.now().month,
               DateTime.now().day,
             ).add(Duration(days: -i)));
-    for (int i = 0; i < items.length; i++) {
+    for (int i = items.length - 1; i > -1; i--) {
       String a = DateFormat('yyyy-MM-dd').format(items[i]).toString();
       MentalModel x = Hive.box('mental').get(a, defaultValue: MentalModel());
       chartData.add(DailyExercise(

@@ -12,6 +12,7 @@ class MentalMainPage extends StatefulWidget {
 
 class _MentalMainPageState extends State<MentalMainPage> {
   int _page = 0;
+  // ignore: unused_field
   GlobalKey<CurvedNavigationBarState> _bottomNavigationKey = GlobalKey();
   @override
   Widget build(BuildContext context) {

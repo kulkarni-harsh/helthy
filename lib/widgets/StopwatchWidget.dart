@@ -4,6 +4,7 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:helthy/constants/colors.dart';
+import 'package:helthy/constants/styles.dart';
 import 'package:helthy/models/MentalModel.dart';
 import 'package:hive/hive.dart';
 import 'package:intl/intl.dart';
@@ -141,8 +142,13 @@ class _StopwatchWidgetState extends State<StopwatchWidget> {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
+            SizedBox(
+              height: 5,
+            ),
             Text(
-                "Total Time ${widget.duration.inMinutes} : ${widget.duration.inSeconds % 100}"),
+              "Total Time ${widget.duration.inMinutes} : ${widget.duration.inSeconds % 100}",
+              style: kBannerText.copyWith(color: Colors.black87, fontSize: 25),
+            ),
             Expanded(
               child: CircularCountDownTimer(
                 onComplete: () {

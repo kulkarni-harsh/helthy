@@ -20,4 +20,4 @@ class Palette {
 
 Color kPrimaryColor = Color(0xff6b8e4e);
 
-Color KMentalColor = Colors.redAccent;
+Color kMentalColor = Colors.redAccent;
