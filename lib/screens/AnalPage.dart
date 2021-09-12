@@ -96,7 +96,10 @@ class _AnalPageState extends State<AnalPage> {
           ),
           SliverToBoxAdapter(
             child: Container(
-              height: MediaQuery.of(context).size.height / 2.5,
+              height: MediaQuery.of(context).size.height >
+                      MediaQuery.of(context).size.width
+                  ? MediaQuery.of(context).size.height * 0.5
+                  : MediaQuery.of(context).size.height * 0.8,
               child: SfCartesianChart(
                 legend: Legend(
                     position: LegendPosition.bottom,
