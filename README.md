@@ -1,16 +1,30 @@
-# helthy
 
-A new Flutter project.
+# Helthy
 
-## Getting Started
+Helthy is a mental health based web app developed using Flutter to help user perform various meditation activities and analyze them.
 
-This project is a starting point for a Flutter application.
+# Helthy
 
-A few resources to get you started if this is your first Flutter project:
+Helthy is a mental health based web app developed using Flutter to help user perform various meditation activities and analyze them.
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+## Features
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+- Works Offline ( only if the app is installed locally on any android device )
+- No need to login 
+- Analyze your performance
+- Positive Quotes in one click
+
+  
+## Installation
+
+Install my-project with npm
+
+```bash
+  clone repo
+  debug run the app
+```
+    
+## Screenshots
+
+![App Screenshot](https://via.placeholder.com/468x300?text=App+Screenshot+Here)
+

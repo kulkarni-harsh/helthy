@@ -69,12 +69,37 @@ class _AnalPageState extends State<AnalPage> {
               ),
             ),
             backgroundColor: Colors.white,
+            actions: [
+              IconButton(
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (context) => CupertinoAlertDialog(
+                        title: Text("Info"),
+                        content: Text(kChartInfo),
+                        actions: [
+                          TextButton(
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                            child: Text("OK"),
+                          ),
+                        ]),
+                  );
+                },
+                icon: Icon(
+                  Icons.info_outline_rounded,
+                  color: kPrimaryColor,
+                ),
+              ),
+            ],
           ),
           SliverToBoxAdapter(
             child: Container(
               height: MediaQuery.of(context).size.height / 2.5,
               child: SfCartesianChart(
                 legend: Legend(
+                    position: LegendPosition.bottom,
                     isVisible: true,
                     toggleSeriesVisibility: true,
                     overflowMode: LegendItemOverflowMode.wrap),
@@ -115,18 +140,6 @@ class _AnalPageState extends State<AnalPage> {
                           e.freeformMeditation)
                 ],
                 primaryXAxis: CategoryAxis(),
-              ),
-            ),
-          ),
-          SliverToBoxAdapter(
-            child: Container(
-              padding: EdgeInsets.symmetric(vertical: 10, horizontal: 15),
-              child: Text(
-                kChartInfo,
-                style: TextStyle(
-                    color: Colors.black87,
-                    fontSize: 20,
-                    fontWeight: FontWeight.w600),
               ),
             ),
           ),

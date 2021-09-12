@@ -234,26 +234,23 @@ class _TimerWidgetState extends State<TimerWidget> {
                                     print(controller.getTime());
                                     String v = controller.getTime();
                                     if (v.length < 3)
-                                      updateValue(Duration(
-                                          seconds: duration.inSeconds -
-                                              int.parse(v)));
+                                      updateValue(
+                                          Duration(seconds: int.parse(v)));
                                     else if (v.length < 6)
                                       updateValue(Duration(
-                                          seconds: duration.inSeconds -
-                                              Duration(
-                                                      minutes: int.parse(
-                                                          v[0] + v[1]),
-                                                      seconds: int.parse(
-                                                          v[3] + v[4]))
-                                                  .inSeconds));
+                                          seconds: Duration(
+                                                  minutes:
+                                                      int.parse(v[0] + v[1]),
+                                                  seconds:
+                                                      int.parse(v[3] + v[4]))
+                                              .inSeconds));
                                     else
                                       updateValue(Duration(
-                                          seconds: duration.inSeconds -
-                                              Duration(
-                                                hours: int.parse(v[0] + v[1]),
-                                                minutes: int.parse(v[3] + v[4]),
-                                                seconds: int.parse(v[6] + v[7]),
-                                              ).inSeconds));
+                                          seconds: Duration(
+                                        hours: int.parse(v[0] + v[1]),
+                                        minutes: int.parse(v[3] + v[4]),
+                                        seconds: int.parse(v[6] + v[7]),
+                                      ).inSeconds));
 
                                     a.cancel();
                                   });
